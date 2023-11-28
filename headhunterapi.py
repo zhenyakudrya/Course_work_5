@@ -14,7 +14,7 @@ class HeadHunterAPI:
 
     def get_vacancies_by_id(self, employer_id) -> dict:
         """
-        Возвращает отфильтрованные по ключевому слову вакансии с сайта
+        Возвращает вакансии с сайта по id работодателя
         """
         params = {
             "employer_id": employer_id,  # id работодателя

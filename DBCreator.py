@@ -15,6 +15,9 @@ class DBCreator:
         self.host = "localhost"
 
     def create_db(self, db_name):
+        """
+        Создание базы данных
+        """
         try:
             conn = psycopg2.connect(user=self.user,
                                     password=self.password,
@@ -31,6 +34,9 @@ class DBCreator:
                 conn.close()
 
     def create_table(self, db_name, table_name):
+        """
+        Создание таблицы
+        """
         try:
             conn = psycopg2.connect(user=self.user,
                                     password=self.password,
@@ -56,6 +62,9 @@ class DBCreator:
         pass
 
     def fill_table(self, db_name, vacancies_list):
+        """
+        Заполнение таблицы
+        """
         try:
             conn = psycopg2.connect(user=self.user,
                                     password=self.password,
