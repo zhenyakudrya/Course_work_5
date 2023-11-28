@@ -29,6 +29,7 @@ class DBManager:
                        FROM vacancies
                        GROUP BY employer"""
             cursor.execute(query)
+            print(cursor.fetchall())
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
         finally:
@@ -117,7 +118,7 @@ class DBManager:
                                     database=self.database)
 
             cursor = conn.cursor()
-            query = f"SELECT title FROM vacancies WHERE title LIKE %{keyword}%"
+            query = f"SELECT title FROM vacancies WHERE title LIKE '%{keyword}%'"
             cursor.execute(query)
             print(cursor.fetchall())
         except (Exception, Error) as error:
